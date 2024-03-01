@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body{ /* ảnh nền */
     background: url(img/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette_1258-48250.jpg);
 }
 .body1{
