@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Profile</title>
+</head>
+<body>
+  <div class="main">
+    <header>
+      <h1>Tuan Nguyen</h1>
+      <p>Web Developer</p>
+    </header>
+    <div class="profile-img">
+      <img src="assets/Picture.jpg" alt="Profile Picture">
+    </div>
+    <div class="profile-info">
+      <h2>About Me</h2>
+      <ul>
+        <li>Họ và Tên: Nguyễn Ngọc Anh Tuấn</li>
+        <li>Ngày sinh: 06/02/2003</li>
+        <li>Nơi sinh: Thành phố Thái Bình</li>
+        <li>Nghề nghiệp: sinh viên</li>
+      </ul>
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>C++</li>
+        <li>Python</li>
+        <li>Git</li>
+      </ul>
+      <h2>Contacts</h2>
+      <ul>
+        <li>Email: anhtuan060203@gmail.com</li>
+        <li>Phone: 0914144705</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
