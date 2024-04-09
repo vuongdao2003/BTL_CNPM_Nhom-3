@@ -1,0 +1,39 @@
+<!-- home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create News</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="post_tab_style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style="background-color: white;">
+    
+    <ul>
+        <li><a  href="/admin">User</a></li>
+        <li><a href="/create">Create</a></li>
+        <li><a href="#contact">Update</a></li>
+        <li><a href="#about">Delete</a></li>
+        <li><a  href="/homeNews">News</a></li>
+        <li><a class="active"  href="/ADcreateNews">Create News</a></li>
+      </ul>
+      <form action="/news" method="post">
+        <fieldset>
+          <div class="container">
+            <label for="header">Tiêu đề:</label>
+            <textarea type="text" id="header" name="header"></textarea><br><br>
+          </div>
+          <div class="container">
+            <label for="content">Nội dung:</label>
+            <textarea rows="15" cols="200" id="content" name="content"></textarea><br><br> 
+          </div>
+          <div class="submit-button">
+            <input type="submit" value="Submit">
+          </div>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teddi Posting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="post_tab_style.css" />
+</head>
+<body>
+    <% if (typeof message !== 'undefined') { %>
+        <script>
+            alert("<%= message %>");
+        </script>
+    <% } %>
+  <!-- navbar -->
+    <nav class="navbar">
+      <a style="text-decoration: none;" href="/"><div class="logo_item">
+        <img src="https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/heartsteel-emblem-removebg-preview.png?v=1710841251406" alt="Teddi">Teddi
+      </div></a>
+      <div class="search_bar">
+        <input type="text" placeholder="Search Teddi..." />
+      </div>
+      <div class="navbar_content">
+        <i class="bx bx-sun" ></i>
+        <i class="bx bx-plus-circle" ></i>
+        <i class="bx bx-bell" ></i>
+        <img src="https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/anhkisuluong100.jpg?v=1712215673502" alt="avt" class="profile" />
+      </div>
+    </nav>
+  <!-- chinh ho t phan nay -->
+  <form action="/news" method="post">
+    <fieldset>
+      <div class="container">
+        <label for="header">Tiêu đề:</label>
+        <textarea type="text" id="header" name="header"></textarea><br><br>
+      </div>
+      <div class="container">
+        <label for="content">Nội dung:</label>
+        <textarea rows="15" cols="200" id="content" name="content"></textarea><br><br> <!-- Changed input type to textarea -->
+      </div>
+      <div class="submit-button">
+        <input type="submit" value="Submit">
+      </div>
+    </fieldset>
+</form>
+      <!--
+<div class="container">
+    <p>Tiêu đề</p>
+    <div class="content">
+      <input type="text" placeholder="Nhập nội dung ">
+    </div>
+  </div>
+  <div class="container">
+  <p>Nội dung</p>
+  <div class="content">
+    <textarea rows="15" cols="200" placeholder="Nhập nội dung"></textarea>
+  </div>
+</div>
+  
+  <div class="submit-button">
+    <input type="submit" value="Submit">
+  </div>
+-->
+  <!-- footer -->
+        <footer>
+            <div class = "footer-container">
+                <div class = "footer-left">
+                    <h2>TECHNEWS</h2>
+                    <p>Add: 210 Nguyen Trai Street, Ha Noi, Viet Nam. </p>
+                    <p>Editor_In_Chief: Nhom 3 CNPM</p>
+                    <p>Tel: 84-24-39332316 - Fax: 84-24-39332311</p>
+                    <p>E-mail: nhom3cnpm@vnagency.com.vn</p>
+                </div>
+
+                <div class = "footer-right">
+                    <h2>Newletter</h2>
+                    <p>View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health.</p>
+
+                    <div>
+                        <input type = "text" placeholder = "Email Address">
+                        <i class = "fas fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <p>Copyright &copy; 2024 All rights reserved | PTIT</p>
+        </footer>
+</body>
+</html>

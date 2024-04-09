@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <!-- Add your CSS link here -->
+</head>
+<body>
+    <h1>Search Results</h1>
+    <p>Displaying results for: <%= query %></p>
+    <% if (searchResults.length > 0) { %>
+        <ul>
+            <% searchResults.forEach(newsItem => { %>
+                <li>
+                    <h2><%= newsItem.title %></h2>
+                    <p><%= newsItem.content %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No results found.</p>
+    <% } %>
+    <!-- Add your JavaScript or additional HTML here -->
+</body>
+</html>

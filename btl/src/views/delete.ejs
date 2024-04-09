@@ -1,0 +1,30 @@
+<!-- home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style="background-color: white;">
+
+    <ul>
+        <li><a  href="/admin">Home</a></li>
+        <li><a  href="/create">Create</a></li>
+        <li><a href="#contact">Update</a></li>
+        <li><a class="active"href="#about">Delete</a></li>
+        <li><a href="/homeNews">News</a></li>
+        <li><a href="/ADcreateNews">Create News</a></li>
+      </ul>
+
+<form action="/delete/<%= account.id %>" method="post">
+ <fieldset class="sub">
+  Bạn chắc chắn muốn xóa
+  <input type="submit" value="Xác Nhận">
+ </fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="../news.css">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <nav class="navbar">
+      <a style="text-decoration: none;" href="/"><div class="logo_item">
+        <img src="https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/heartsteel-emblem-removebg-preview.png?v=1710841251406" alt="Teddi">Teddi
+      </div></a>
+        <div class="search_bar">
+          <input type="text" placeholder="Search Teddi..." />
+        </div>
+        <div class="navbar_content">
+          <i class="bx bx-sun" ></i>
+          <a href="/createNews"><i class="bx bx-plus-circle" ></i></a>
+          <i class="bx bx-bell" ></i>
+          <img src="https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/anhkisuluong100.jpg?v=1712215673502" alt="avt" class="profile" />
+          <a id="loginButton" class="button" href="/s" onclick="toggleLogin()">
+            <i class="fas fa-sign-in-alt"></i> <i class="bx bx-log-in"></i>
+        </a>
+        
+        <a id="logoutButton" class="button" href="/s" style="display:none" onclick="toggleLogin()">
+            <i class="fas fa-sign-out-alt"></i> <i class="bx bx-log-out"></i>
+        </a>
+        </div>
+      </nav>
+  <div class="container">
+    <h1><%= news.header %></h1>
+    <ul id="postsList">
+      <li>    
+        <% 
+        const paragraphs = news.content.split(/\n\s*\n/);
+        paragraphs.forEach(paragraph => { %>
+            <p><%= paragraph %></p>
+        <% }); %>
+      </li>
+    </ul>
+  </div>
+  <footer>
+          <div class = "footer-container">
+              <div class = "footer-left">
+                  <h2>Tin Chính</h2>
+                  <p>Add: 210 Nguyen Trai Street, Ha Noi, Viet Nam. </p>
+                  <p>Editor_In_Chief: Nhom 3 CNPM</p>
+                  <p>Tel: 84-24-39332316 - Fax: 84-24-39332311</p>
+                  <p>E-mail: nhom3cnpm@vnagency.com.vn</p>
+              </div>
+
+              <div class = "footer-right">
+                  <h2>Tin Mới</h2>
+                  <p>Xem tin tức mới nhất và tin nóng hôm nay về thế giới, thời tiết, giải trí, chính trị và sức khỏe</p>
+
+                  <div>
+                      <input type = "text" placeholder = "Email Address">
+                      <i class = "fas fa-envelope"></i>
+                  </div>
+              </div>
+          </div>
+
+          <p>Copyright &copy; 2024 All rights reserved | PTIT</p>
+      </footer>
+</body>
+<div>
+</html> 

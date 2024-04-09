@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Teddi</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>.banner-content {
+        display: flex;
+    }
+    
+    .main-content {
+        flex: 1; /* Take up remaining space */
+        margin-right: 20px; /* Adjust margin between main content and hot topics */
+    }
+    
+    .hot-topic-container {
+        flex: 1; /* Take up remaining space */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px; /* Adjust gap between hot topics */
+    }
+    
+    .hot-topic {
+        /* Styles for individual hot topics */
+    }
+    
+    .hot-topic img {
+        max-width: 100%; /* Ensure images don't exceed their container */
+    }
+    .content {
+    max-height: 100px; /* Example height, adjust as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hot-topic {
+    /* Your styles for hot topics */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc; /* Example border for hot topics */
+    padding: 10px; /* Example padding for hot topics */
+}
+
+.hot-topic img {
+    max-width: 100%; /* Ensure images don't exceed their container */
+    margin-bottom: 10px; /* Example margin between image and content */
+}
+
+.hot-topic-content {
+    flex: 1; /* Take up remaining space */
+}
+
+.hot-topic-content h2 {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 10px; /* Example margin bottom for h2 */
+    font-size: 1.5em; /* Example font size for h2 */}
+
+.hot-topic-content p {
+    margin-top: 0; /* Remove default margin */
+    margin-bottom: 10px; /* Example margin bottom for p */
+    font-size: 1em; /* Example font size for p */
+    line-height: 1.4; /* Example line height for p */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <a style="text-decoration: none;" href="/"><div class="logo_item">
+            <img src="https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/heartsteel-emblem-removebg-preview.png?v=1710841251406" alt="Teddi">Teddi
+          </div></a>
+      <div class="search_bar">
+        <input type="text" placeholder="Search Teddi..." />
+      </div>
+      <div class="navbar_content">
+        <i class="bx bx-sun" ></i>
+        <a href="/createNews"><i class="bx bx-plus-circle" ></i></a>
+        <i class="bx bx-bell" ></i>
+        <img src="#" alt="avt" class="profile" />
+        <a id="loginButton" class="button" href="#" onclick="toggleLogin()">
+            <i class="fas fa-sign-in-alt"></i> <i class="bx bx-log-in"></i>
+        </a>
+        <a id="logoutButton" class="button" href="/dangky" style="display:none" onclick="toggleLogin()">
+            <i class="fas fa-sign-out-alt"></i> <i class="bx bx-log-out"></i>
+        </a>
+        <script>
+            function toggleLogin() {
+                var loginButton = document.getElementById("loginButton");
+                var logoutButton = document.getElementById("logoutButton");
+                
+                if (loginButton.style.display === "none") {
+                    loginButton.style.display = "inline";
+                    logoutButton.style.display = "none";
+                } else {
+                    loginButton.style.display = "none";
+                    logoutButton.style.display = "inline";
+                }
+            }
+        </script>
+      </div>
+    </nav>
+  <script src="script.js"></script>
+  <!--Banner-->
+  <section class="banner">
+    <div class="banner-main-content">
+        <!-- Main content -->
+        <h2>GET THE WORLD'S LATEST </h2>
+        <h2>TIN THẾ GIỚI</h2>
+        <h3>Cổng thông tin công nghệ hàng đầu thế giới</h3>
+        <button>
+            <a href="#">Xem tiếp</a>
+        </button>
+        <!-- Current news headlines -->
+        <div class="current-news-head">
+            <h3>Kính Apple: Điều chúng ta mong đợi, điều chúng ta nghĩ là <span>al-nassr </span></h3>
+            <h3>Việc có số điện thoại cũ của Elon Musk sẽ như thế nào <span>al-hilah</span></h3>
+            <h3>Xem chính xác khoảnh khắc Chris Pratt vô tình xóa 51.000 email <span>messi</span></h3>
+            <h3>Virgin Orbit của Richard Branson sẽ phóng tên lửa từ giữa không trung vào Chủ nhật <span>ronaldo</span></h3>
+        </div>
+    </div>
+    <!-- Hot topics section -->
+    <div class="hot-topic-container">
+        <% const maxArticles = 4; %>
+        <% newestNews.slice(0, maxArticles).forEach(news => { %>
+            <div class="hot-topic">
+                <img src="https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/da1e0c3e41db28cefe8f12d9b1fac46a.jpg?v=1712330537692" alt="">
+                <div class="hot-topic-content">
+                    <h2><%= news.header %></h2>
+                    <h3>New Topic</h3>
+                    <p class="content"><%= news.content %></p>
+                    <a href="/tintuc/<%= news.id %>">Read More</a>
+                </div>
+            </div>
+        <% }) %>
+        
+    </div>
+</section>       
+        <hr>
+
+        <main>
+            <section class = "main-container-left">
+                <h2>Tin Nóng Hổi</h2>
+                <div class = "container-top-left">
+                    <article>
+                        <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/feat-may-6-2.webp?v=1712330280573" width="800px">
+
+                        <div>
+                            <h3>Mẫu xe dưới 500 triệu hợp lý nhất cho gia đình</h3>
+
+                            <p>Với nguồn tài chính dưới 500 triệu đồng, bạn hoàn toàn có thể sở hữu một chiếc ô tô cho riêng mình.</p>
+
+                            <a href = "#">Xem tiếp <span>>></span></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class = "container-bottom-left">
+                    <article>
+                        <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/1140-smart-speaker-functions.jpg?v=1712330641086" width="400px">
+                        <div>
+                            <h3>Mẫu loa thông minh hiện đại đáng mua nhất năm nay</h3>
+                            <p>Loa thông minh đã trở thành một phần không thể thiếu trong cuộc sống của những gia đình 4.0 hiện nay, từ việc giải trí cho đến hỗ trợ công việc và quản lý thiết bị, gia đình.</p>
+
+                            <a href = "#">Xem tiếp <span>>></span></a>
+                        </div>
+                    </article>
+
+                    <article>
+                        <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/ipad-pro-129-macvn.jpg?v=1712330753306" width="400px" height="230px">
+                        <div>
+                            <h3>Review IPad Pro - Chiếc IPad sẽ trở thành máy tính chính của con người?</h3>
+                            <p>Nối tiếp sự thành công của iPad Air 5 ra mắt vào năm 2022, Apple đang chuẩn bị trình làng thế hệ kế nhiệm với nhiều nâng cấp mạnh mẽ.</p>
+
+                            <a href = "#">Xem tiếp <span>>></span></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class = "main-container-right">
+                <h2>Latest Stories</h2>
+                
+                <article>
+                    <h4>just in </h4>
+                    <div>
+                        <h2>IRS đóng vai trò quan trọng như nào trong các vấn đề liên quan đến thuế</h2>
+
+                        <p>IRS là một chuyên ban của Bộ Ngân Khố (Department of the Treasury), và là một trong những cơ quan thuế vụ hiệu quả nhất trên thế giới. </p>
+
+                        <a href = "#">Xem tiếp <span>>></span></a>
+                    </div>
+                    <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/IRS-4963bff58dbc4225886b2022da7fdfce.jpg?v=1712330952621">
+                </article>
+
+                <article>
+                    <h4>vừa xong</h4>
+                    <div>
+                        <h2>Địa điểm ngoài trời thích hợp phục vụ việc giải trí cho gia đình</h2>
+
+                        <p>Các hoạt động ngoài trời cho gia đình là việc vô cùng tốt và cần thiết giúp gắn kết tình cảm gia đình hơn và tạo ra các kỷ niệm đáng nhớ. </p>
+
+                        <a href = "#">Xem tiếp <span>>></span></a>
+                    </div>
+                    <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/images%20(1).jfif?v=1712331088117">
+                </article>
+
+                <article>
+                    <h4>vừa xong</h4>
+                    <div>
+                        <h2>Tại sao phải đi bộ? Hãy cùng nhìn qua mẫu xe điện hot nhất 2024</h2>
+
+                        <p>Xe máy điện không chỉ là lựa chọn được đông đảo người tiêu dùng yêu thích mà còn đánh dấu một xu hướng thời thượng hiện nay.</p>
+
+                        <a href = "#">Xem tiếp <span>>></span></a>
+                    </div>
+                    <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/5e1220f0-3a16-11eb-aefb-20d43f573d7e.jfif?v=1712331135601">
+                </article>
+
+                <article>
+                    <h4>vừa xong </h4>
+                    <div>
+                        <h2>Disneyland Paris có gì thú vị - Kinh nghiệm khám phá vui chơi tại thế giới cổ tích</h2>
+
+                        <p>Disneyland Paris là một trong những khu vui chơi giải trí thu hút nhiều du khách nhất ở châu u. Từ khi khai trương, Disneyland Paris đã có 320 triệu lượt người đến tham quan.</p>
+
+                        <a href = "#">Xem tiếp <span>>></span></a>
+                    </div>
+                    <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/images%20(2).jfif?v=1712331168584">
+                </article>
+
+                <article>
+                    <h4>Vừa xong </h4>
+                    <div>
+                        <h2>Chống nhìn trộm màn hình điện thoại bằng mẹo cực hay</h2>
+
+                        <p>Có những lúc bạn phải cố che màn hình điện thoại của mình khỏi những ánh mắt xung quanh khi nhắn tin hay đăng nhập tài khoản, chắc chắn bạn đã ít nhất một lần gặp phải.</p>
+
+                        <a href = "#">Xem tiếp <span>>></span></a>
+                    </div>
+                    <img src = "https://cdn.glitch.global/0006b97d-80a0-4243-8237-75e468418802/xLMGiCPwdGnDhnjA9xZ96R-1200-80.jpg?v=1712331212511">
+                </article>
+            </section>
+        </main>
+        <!-- footer -->
+        <footer>
+            <div class = "footer-container">
+                <div class = "footer-left">
+                    <h2>Tin Chính</h2>
+                    <p>Add: 210 Nguyen Trai Street, Ha Noi, Viet Nam. </p>
+                    <p>Editor_In_Chief: Nhom 3 CNPM</p>
+                    <p>Tel: 84-24-39332316 - Fax: 84-24-39332311</p>
+                    <p>E-mail: nhom3cnpm@vnagency.com.vn</p>
+                </div>
+
+                <div class = "footer-right">
+                    <h2>Tin Mới</h2>
+                    <p>Xem tin tức mới nhất và tin nóng hôm nay về thế giới, thời tiết, giải trí, chính trị và sức khỏe</p>
+
+                    <div>
+                        <input type = "text" placeholder = "Email Address">
+                        <i class = "fas fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <p>Copyright &copy; 2024 All rights reserved | PTIT</p>
+        </footer>
+  </body>
+</html>

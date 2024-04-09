@@ -1,0 +1,54 @@
+<!-- home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body style="background-color: white;">
+    
+    <ul>
+        <li><a  href="/admin">User</a></li>
+        <li><a href="/create">Create</a></li>
+        <li><a href="#contact">Update</a></li>
+        <li><a href="#about">Delete</a></li>
+        <li><a class="active"  href="/homeNews">News</a></li>
+        <li><a href="/ADcreateNews">Create News</a></li>
+      </ul>
+      <h1>User Data</h1>
+    <% if (listuser.length === 0) { %>
+        <p>No data found</p>
+    <% } else { %>
+        <table class="w3-table-all" >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Header</th>
+                    <th>Content</th>
+                    <th>Action</th>
+                    <!-- Add more table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <% listuser.forEach(user => { %>
+                    <tr>
+                        <td><%= user._id %></td>
+                        <td><%= user.header %></td>
+                        <td><%= user.content %></td>
+                        <td>
+                            <a href="/updateNews/<%= user._id %>">edit</a>
+                            <a href="/deleteNews/<%= user._id %>">delete</a>
+                        </td>
+                        
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } %>
+      
+</body>
+</html>
